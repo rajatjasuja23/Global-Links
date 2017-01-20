@@ -18,18 +18,19 @@ var GlobalLinks=React.createClass(
     {
 getInitialState()
 {
-    return [{"Title":"GOMs,Directives & Circulars","Img":"/Style%20Library/mindef/img/quicklinks-1.png"},
+    return  {
+        data: [{"Title":"GOMs,Directives & Circulars","Img":"/Style%20Library/mindef/img/quicklinks-1.png"},
     {"Title":"ATHENA","Img":"/Style%20Library/mindef/img/quicklinks-2.png"},
     {"Title":"eApps","Img":"/Style%20Library/mindef/img/quicklinks-3.png"},
     {"Title":"Collaboration Sites","Img":"/Style%20Library/mindef/img/quicklinks-4.png"},
     {"Title":"Feedback / Suggestions","Img":"/Style%20Library/mindef/img/quicklinks-5.png"}
     
-    ]
+    ]}
 },
 
     globalLinks()
 {
-    return this.state.promodata.map((global,index) => (
+    return this.state.data.map((global,index) => (
         <Photo item={global}  key={index} />
     ));  
 },
