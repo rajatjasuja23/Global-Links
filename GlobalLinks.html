@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<script src="./node_modules/react-component-visibility/index.js"></script>
+<script type="text/babel">
+var Links=React.createClass({
+
+                        render()
+                        {
+                            return (
+                        <a>{this.props.item.Title}<img src={this.props.item.img} /></a>
+                         });
+});
+
+var GlobalLinks=React.createClass(
+    {
+getInitialState()
+{
+    return [{"Title":"GOMs,Directives & Circulars","Img":"/Style%20Library/mindef/img/quicklinks-1.png"},
+    {"Title":"ATHENA","Img":"/Style%20Library/mindef/img/quicklinks-2.png"},
+    {"Title":"eApps","Img":"/Style%20Library/mindef/img/quicklinks-3.png"},
+    {"Title":"Collaboration Sites","Img":"/Style%20Library/mindef/img/quicklinks-4.png"},
+    {"Title":"Feedback / Suggestions","Img":"/Style%20Library/mindef/img/quicklinks-5.png"}
+    
+    ]
+},
+
+    globalLinks()
+{
+    return this.state.promodata.map((global,index) => (
+        <Photo item={global}  key={index} />
+    ));  
+},
+        render()
+        {
+            return {
+                 return (<li class="dropdown" id="B_Quicklinks">
+            <a><span class="glyphicon glyphicon-th"></span></a>
+            <ul class="dropdown-menu arrow_box">
+              <div class="settingquicklinksbox">
+               <a>{this.globalLinks}</a>
+              </div>
+            </ul>
+          </li>)
+        }
+    }
+    });
+
+
+ReactDOM.render(<GlobalLinks />,document.getElementById('root')); 
+        </script>
+
+    </head>
+
+    <body>
+        <div id="root">
+
+        </div>
+    </body>
+</html>
